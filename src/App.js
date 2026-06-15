@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import TechStack from "./components/TechStack";
 import Services from "./components/Services";
 import Team from "./components/Team";
 import Projects from "./components/Projects";
@@ -14,6 +15,7 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
+        <TechStack />
         <Services />
         <Projects />
         <Team />
