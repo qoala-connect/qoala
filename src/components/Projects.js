@@ -112,6 +112,10 @@ export default function Projects() {
                 </div>
                 <p className="project-desc">{p.desc}</p>
               </div>
+              <div className="project-overlay">
+                <p className="project-overlay-title">{p.title}</p>
+                <p className="project-overlay-desc">{p.desc}</p>
+              </div>
             </>
           );
 
