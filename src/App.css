@@ -484,6 +484,13 @@ body {
   font-weight: 500;
 }
 
+.team-exp {
+  margin-top: 8px !important;
+  font-size: 12px !important;
+  color: var(--accent) !important;
+  font-weight: 600 !important;
+}
+
 /* === CONTACT === */
 .contact-wrap {
   max-width: 640px;

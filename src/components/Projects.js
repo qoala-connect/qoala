@@ -8,6 +8,8 @@ import dataaudit from "../assets/Datasudit.png";
 import RAGify from "../assets/Ragify.png";
 import MediPredict from "../assets/Medipridict.png";
 import SalePoint from "../assets/salepoint.png";
+import Kaamgaar from "../assets/Kaamgaar.png";
+import Stonamart from "../assets/sonamart.png";
 
 import "./Projects.css";
 
@@ -71,16 +73,14 @@ const projects = [
   {
     title: "Kaamgaar",
     tags: ["Platform", "NextJS", "PostgreSQL"],
-    img: null,
-    color: "linear-gradient(135deg, #1a56db 0%, #0a2d80 100%)",
+    img: Kaamgaar,
     link: "https://kaamgaar.in",
     desc: "Construction workforce platform connecting Indian workers and vendors. Workers register skills, vendors find verified talent.",
   },
   {
     title: "Stonamart",
     tags: ["E-commerce", "Platform"],
-    img: null,
-    color: "linear-gradient(135deg, #7c3aed 0%, #3b0f8c 100%)",
+    img: Stonamart,
     link: null,
     desc: "E-commerce platform — coming soon. Live link will be available shortly.",
   },

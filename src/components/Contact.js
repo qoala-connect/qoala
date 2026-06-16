@@ -1,21 +1,31 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import emailjs from "emailjs-com";
 
 export default function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [status, setStatus] = useState(null); // 'sending' | 'success' | 'error'
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const subject = encodeURIComponent("New Project Brief");
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
-    );
-    window.open(
-      `https://mail.google.com/mail/?view=cm&fs=1&to=azamnaqvi90@gmail.com&su=${subject}&body=${body}`,
-      "_blank"
-    );
+    setStatus("sending");
+
+    emailjs
+      .send(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        { name, email, message },
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY,
+      )
+      .then(() => {
+        setStatus("success");
+        setName("");
+        setEmail("");
+        setMessage("");
+      })
+      .catch(() => setStatus("error"));
   };
 
   return (
@@ -24,7 +34,8 @@ export default function Contact() {
       <h2 className="section-title">Start a Project</h2>
       <div className="contact-wrap">
         <p className="contact-subtitle">
-          Tell us about the problem you want to solve — we'll respond within 48 hours.
+          Tell us about the problem you want to solve — we'll respond within 48
+          hours.
         </p>
         <motion.form
           onSubmit={handleSubmit}
@@ -58,9 +69,15 @@ export default function Contact() {
             />
           </div>
           <div className="form-actions">
-            <button className="btn primary" type="submit">
-              Send project brief
+            <button className="btn primary" type="submit" disabled={status === "sending"}>
+              {status === "sending" ? "Sending…" : "Send project brief"}
             </button>
+            {status === "success" && (
+              <p className="form-status success">Message sent! We'll get back to you within 48 hours.</p>
+            )}
+            {status === "error" && (
+              <p className="form-status error">Something went wrong. Please try again.</p>
+            )}
           </div>
         </motion.form>
       </div>

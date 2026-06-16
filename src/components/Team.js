@@ -2,10 +2,10 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const people = [
-  { name: "Satyam", role: "GenAI Engineer" },
-  { name: "Aman", role: "FullStack Developer" },
-  { name: "Azam", role: "Data Engineer" },
-  { name: "Suraj", role: "Frontend & Integration" },
+  { name: "Satyam", role: "GenAI Engineer", exp: 5 },
+  { name: "Aman", role: "FullStack Developer", exp: 5 },
+  { name: "Azam", role: "Data Engineer", exp: 10 },
+  { name: "Suraj", role: "Frontend & Integration", exp: 5 },
 ];
 
 export default function Team() {
@@ -29,6 +29,7 @@ export default function Team() {
             </div>
             <h4>{p.name}</h4>
             <p>{p.role}</p>
+            <p className="team-exp">{p.exp}+ yrs experience</p>
           </motion.div>
         ))}
       </div>
