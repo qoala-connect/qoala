@@ -4,8 +4,9 @@ import { motion } from "framer-motion";
 const people = [
   { name: "Satyam", role: "GenAI Engineer", exp: 5 },
   { name: "Aman", role: "FullStack Developer", exp: 5 },
-  { name: "Azam", role: "Data Engineer", exp: 10 },
+  { name: "Azam", role: "Data Engineer", exp: 7 },
   { name: "Suraj", role: "Frontend & Integration", exp: 5 },
+  { name: "Abhishek", role: "AI Engineer", exp: 5 },
 ];
 
 export default function Team() {
