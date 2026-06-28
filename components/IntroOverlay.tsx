@@ -163,7 +163,7 @@ export default function IntroOverlay() {
         const r    = eased * 120;
         const mask = `radial-gradient(circle at 50% 50%, transparent ${r}vmax, #050a16 ${r}vmax)`;
         overlay.style.maskImage = mask;
-        (overlay.style as any).webkitMaskImage = mask; // Safari
+        (overlay.style as CSSStyleDeclaration & { webkitMaskImage: string }).webkitMaskImage = mask; // Safari
 
         if (p < 1) {
           rafRef.current = requestAnimationFrame(tick);
