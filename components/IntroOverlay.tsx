@@ -163,6 +163,7 @@ export default function IntroOverlay() {
         const r    = eased * 120;
         const mask = `radial-gradient(circle at 50% 50%, transparent ${r}vmax, #050a16 ${r}vmax)`;
         overlay.style.maskImage = mask;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         (overlay.style as any).webkitMaskImage = mask; // Safari
 
         if (p < 1) {
