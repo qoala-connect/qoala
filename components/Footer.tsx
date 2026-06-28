@@ -275,26 +275,25 @@ export default function Footer() {
               </a>
               <a href="#contact" className="ft-link">Start a Project</a>
             </div>
-          </div>
-        </div>
 
-        {/* CTA row — full width, aligned with grid */}
-        <div style={{ display: "flex", justifyContent: "flex-start", marginBottom: 40 }}>
-          <a href="#contact" style={{
-            display: "inline-flex", alignItems: "center", gap: 8,
-            padding: "12px 28px", borderRadius: 999,
-            background: "linear-gradient(135deg, #6D6BFF, #9B6BFF)",
-            color: "#fff", fontSize: 14, fontWeight: 600,
-            textDecoration: "none", letterSpacing: "-0.01em",
-            boxShadow: "0 0 28px rgba(124,92,255,.35)",
-            transition: "transform 0.2s, box-shadow 0.2s",
-            whiteSpace: "nowrap",
-          }}>
-            Hire the team
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-              <path d="M2.5 6h7M6 2.5 9.5 6 6 9.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </a>
+            {/* CTA pill */}
+            <a href="#contact" style={{
+              display: "inline-flex", alignItems: "center", gap: 8,
+              marginTop: 24,
+              padding: "10px 20px", borderRadius: 999,
+              background: "linear-gradient(135deg, #6D6BFF, #9B6BFF)",
+              color: "#fff", fontSize: 13, fontWeight: 600,
+              textDecoration: "none", letterSpacing: "-0.01em",
+              boxShadow: "0 0 28px rgba(124,92,255,.35)",
+              transition: "transform 0.2s, box-shadow 0.2s",
+              whiteSpace: "nowrap",
+            }}>
+              Hire the team
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                <path d="M2.5 6h7M6 2.5 9.5 6 6 9.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </a>
+          </div>
         </div>
 
         {/* Divider */}
@@ -312,7 +311,7 @@ export default function Footer() {
           <p style={{ fontSize: 12.5, color: "#253044", margin: 0 }}>
             Made with{" "}
             <span style={{ color: "#7c5cff", fontSize: 13 }}>♥</span>
-            {" "}in India &nbsp;·&nbsp; Full-Stack + GenAI
+            {" "}in Lucknow
           </p>
 
           <a href="#home" className="ft-backtop">
