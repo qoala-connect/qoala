@@ -218,12 +218,6 @@ export default function Footer() {
               }}>Qoala</span>
             </a>
 
-            {/* Badge */}
-            <div className="ft-badge">
-              <span style={{ width: 5, height: 5, borderRadius: "50%", background: "#7c5cff", boxShadow: "0 0 6px 1px #7c5cff", flexShrink: 0 }} />
-              Available for projects
-            </div>
-
             {/* Tagline */}
             <p style={{
               fontSize: 13.5, color: "#3d4f6a", lineHeight: 1.75,
@@ -272,33 +266,35 @@ export default function Footer() {
           {/* Contact column */}
           <div>
             <p className="ft-col-head">Get in touch</p>
-            <div style={{ display: "flex", flexDirection: "column", gap: 14, marginBottom: 28 }}>
-              <a href="mailto:hello@qoala.dev" className="ft-link" style={{ wordBreak: "break-word" }}>
-                hello@qoala.dev
+            <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+              <a href="mailto:qoala.connect@gmail.com" className="ft-link" style={{ wordBreak: "break-word" }}>
+                qoala.connect@gmail.com
               </a>
               <a href="#" target="_blank" rel="noopener noreferrer" className="ft-link">
                 WhatsApp Us
               </a>
               <a href="#contact" className="ft-link">Start a Project</a>
             </div>
-
-            {/* CTA pill */}
-            <a href="#contact" style={{
-              display: "inline-flex", alignItems: "center", gap: 8,
-              padding: "10px 20px", borderRadius: 999,
-              background: "linear-gradient(135deg, #6D6BFF, #9B6BFF)",
-              color: "#fff", fontSize: 13, fontWeight: 600,
-              textDecoration: "none", letterSpacing: "-0.01em",
-              boxShadow: "0 0 28px rgba(124,92,255,.35)",
-              transition: "transform 0.2s, box-shadow 0.2s",
-              whiteSpace: "nowrap",
-            }}>
-              Hire the team
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                <path d="M2.5 6h7M6 2.5 9.5 6 6 9.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </a>
           </div>
+        </div>
+
+        {/* CTA row — full width, aligned with grid */}
+        <div style={{ display: "flex", justifyContent: "flex-start", marginBottom: 40 }}>
+          <a href="#contact" style={{
+            display: "inline-flex", alignItems: "center", gap: 8,
+            padding: "12px 28px", borderRadius: 999,
+            background: "linear-gradient(135deg, #6D6BFF, #9B6BFF)",
+            color: "#fff", fontSize: 14, fontWeight: 600,
+            textDecoration: "none", letterSpacing: "-0.01em",
+            boxShadow: "0 0 28px rgba(124,92,255,.35)",
+            transition: "transform 0.2s, box-shadow 0.2s",
+            whiteSpace: "nowrap",
+          }}>
+            Hire the team
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+              <path d="M2.5 6h7M6 2.5 9.5 6 6 9.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </a>
         </div>
 
         {/* Divider */}
