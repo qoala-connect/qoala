@@ -95,15 +95,13 @@ const NAVBAR_CSS = `
   .qn-cta:hover .qn-arrow { transform: translateX(6px); }
   .qn-logo-sq {
     display: flex; align-items: center; justify-content: center;
-    width: 40px; height: 40px; border-radius: 16px; flex-shrink: 0;
-    background: linear-gradient(160deg, #7C5CFF 0%, #8A6BFF 50%, #B36BFF 100%);
-    box-shadow: 0 4px 20px rgba(124,92,255,.42),
-                0 0 0 1px rgba(255,255,255,.10);
-    transition: box-shadow 0.25s ease;
+    width: 40px; height: 40px; border-radius: 12px; flex-shrink: 0;
+    background: #ffffff;
+    box-shadow: 0 2px 12px rgba(0,0,0,.18), 0 0 0 1px rgba(255,255,255,.12);
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
   }
   .qn-logo-sq:hover {
-    box-shadow: 0 8px 32px rgba(124,92,255,.70),
-                0 0 0 1px rgba(255,255,255,.20);
+    box-shadow: 0 6px 24px rgba(0,0,0,.28), 0 0 0 1px rgba(255,255,255,.20);
   }
   .qn-ml {
     display: block; color: #8a9dc0; text-decoration: none;
@@ -222,7 +220,7 @@ export default function Navbar() {
                     alt=""
                     width={26}
                     height={26}
-                    style={{ objectFit: "contain", filter: "brightness(0) invert(1)" }}
+                    style={{ objectFit: "contain", filter: "invert(18%) sepia(90%) saturate(1400%) hue-rotate(210deg) brightness(80%) contrast(110%)" }}
                   />
                 </motion.div>
                 <span style={{
