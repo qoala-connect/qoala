@@ -196,16 +196,19 @@ export default function Footer() {
             <a href="/" style={{ display: "inline-flex", alignItems: "center", gap: 11, textDecoration: "none", marginBottom: 18 }}>
               <div style={{
                 width: 42, height: 42, borderRadius: 13, flexShrink: 0,
-                background: "linear-gradient(160deg, #7C5CFF 0%, #8A6BFF 50%, #B36BFF 100%)",
+                background: "rgba(255,255,255,.07)",
+                border: "1px solid rgba(255,255,255,.13)",
+                backdropFilter: "blur(10px)",
+                WebkitBackdropFilter: "blur(10px)",
                 display: "flex", alignItems: "center", justifyContent: "center",
-                boxShadow: "0 4px 22px rgba(124,92,255,.45)",
+                boxShadow: "0 2px 12px rgba(0,0,0,.15)",
               }}>
                 <Image
                   src="/logo-transparent.png"
                   alt="Qoala"
                   width={25}
                   height={25}
-                  style={{ objectFit: "contain", filter: "brightness(0) invert(1)" }}
+                  style={{ objectFit: "contain" }}
                 />
               </div>
               <span style={{
