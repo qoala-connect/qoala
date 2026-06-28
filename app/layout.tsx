@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import IntroOverlay from "@/components/IntroOverlay";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://qoala.in"),
@@ -62,7 +63,23 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organisationSchema) }}
         />
       </head>
-      <body>{children}</body>
+      <body>
+        {/*
+          IntroOverlay is position:fixed + z-index:9999.
+          It renders nothing on repeat visits (sessionStorage gate).
+          The page renders and hydrates underneath it immediately —
+          zero layout shift, zero SEO impact.
+        */}
+        <IntroOverlay />
+        {/*
+          id="main-content" + tabIndex={-1} allows focus() to land here
+          after the intro's iris reveal completes (accessibility).
+          outline:none removes the visible focus ring on programmatic focus.
+        */}
+        <main id="main-content" tabIndex={-1} style={{ outline: "none" }}>
+          {children}
+        </main>
+      </body>
     </html>
   );
 }

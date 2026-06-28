@@ -1,6 +1,7 @@
 "use client";
 import { useRef, useEffect, useState } from "react";
 import { motion, useInView, useReducedMotion, Variants } from "framer-motion";
+import FloatingCards from "./FloatingCards";
 
 function StatNum({ value, suffix = "" }: { value: number; suffix?: string }) {
   const [count, setCount] = useState(0);
@@ -103,19 +104,17 @@ export default function Hero() {
     <section className="hero" id="home" ref={heroRef}>
 
       {/* ── Aurora blobs ──────────────────────────────────────────────── */}
-      {!reduced && (
-        <div className="hero-aurora" aria-hidden="true">
-          <div className="aurora-blob aurora-blob-1" />
-          <div className="aurora-blob aurora-blob-2" />
-          <div className="aurora-blob aurora-blob-3" />
-        </div>
-      )}
+      <div className="hero-aurora" aria-hidden="true">
+        <div className="aurora-blob aurora-blob-1" />
+        <div className="aurora-blob aurora-blob-2" />
+        <div className="aurora-blob aurora-blob-3" />
+      </div>
 
       {/* ── Dot-grid texture ──────────────────────────────────────────── */}
       <div className="hero-dots" aria-hidden="true" />
 
       {/* ── Cursor glow ───────────────────────────────────────────────── */}
-      {!reduced && <div className="hero-cursor-glow" ref={glowRef} aria-hidden="true" />}
+      <div className="hero-cursor-glow" ref={glowRef} aria-hidden="true" />
 
       <div className="hero-inner">
         {/*
@@ -166,15 +165,17 @@ export default function Hero() {
               <span className="stat-label">Projects Shipped</span>
             </div>
             <div className="stat-item">
-              <span className="stat-num"><StatNum value={4} /></span>
+              <span className="stat-num"><StatNum value={5} /></span>
               <span className="stat-label">Core Specialists</span>
             </div>
             <div className="stat-item">
-              <span className="stat-num"><StatNum value={3} /></span>
-              <span className="stat-label">GenAI · Web · Data</span>
+              <span className="stat-num"><StatNum value={9} suffix="+" /></span>
+              <span className="stat-label">Services Offered</span>
             </div>
           </motion.div>
         </motion.div>
+
+        <FloatingCards />
       </div>
     </section>
   );
