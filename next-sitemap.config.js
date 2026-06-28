@@ -4,4 +4,5 @@ module.exports = {
   generateRobotsTxt: false,
   changefreq: "weekly",
   priority: 0.7,
+  outDir: "./out",
 };
