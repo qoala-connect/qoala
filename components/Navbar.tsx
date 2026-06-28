@@ -141,49 +141,16 @@ export default function Navbar() {
         animation: "qn-glow-breathe 6s ease-in-out 3s infinite",
       }} />
 
-      {/* ─── Centering fixed row (pointer-events none so page is still clickable) ─── */}
-      <div style={{
-        position: "fixed", top: 0, left: 0, right: 0,
-        zIndex: 1000, display: "flex", justifyContent: "center",
-        pointerEvents: "none",
-      }}>
-        <motion.div
-          initial={{ y: -110, opacity: 0 }}
-          animate={{ y: 0,    opacity: 1 }}
-          transition={{ duration: 0.70, ease: [0.22, 1, 0.36, 1] }}
-          style={{
-            width: "90%", maxWidth: "1200px",
-            borderRadius: "24px",
-            position: "relative",
-            pointerEvents: "auto",
-          }}
-        >
-          {/* ── Gradient border layer ── */}
-          <div aria-hidden="true" style={{
-            position: "absolute", inset: -1, borderRadius: "25px", zIndex: 0,
-            background: `linear-gradient(
-              135deg,
-              rgba(179,107,255,.52) 0%,
-              rgba(138,107,255,.28) 28%,
-              rgba(91,124,255,.22)  55%,
-              rgba(124,92,255,.10)  78%,
-              rgba(179,107,255,.22) 100%
-            )`,
-            filter: "blur(0.4px)",
-          }} />
-
-          {/* ── Soft halo behind border ── */}
-          <div aria-hidden="true" style={{
-            position: "absolute", inset: -6, borderRadius: "30px", zIndex: -1,
-            background: `linear-gradient(
-              135deg,
-              rgba(124,92,255,.20) 0%,
-              rgba(91,124,255,.12) 50%,
-              rgba(124,92,255,.10) 100%
-            )`,
-            filter: "blur(14px)",
-          }} />
-
+      {/* ─── Full-width fixed navbar ─── */}
+      <motion.div
+        initial={{ y: -110, opacity: 0 }}
+        animate={{ y: 0,    opacity: 1 }}
+        transition={{ duration: 0.70, ease: [0.22, 1, 0.36, 1] }}
+        style={{
+          position: "fixed", top: 0, left: 0, right: 0,
+          zIndex: 1000,
+        }}
+      >
           {/* ── Particles ── */}
           {PARTICLES.map((p, i) => (
             <div key={i} aria-hidden="true" style={{
@@ -201,11 +168,11 @@ export default function Navbar() {
           {/* ═══ Glass nav ═══ */}
           <nav style={{
             position: "relative", zIndex: 1,
-            height: "78px", borderRadius: "24px",
-            background: "rgba(8,10,25,0.55)",
+            height: "72px",
+            background: "rgba(8,10,25,0.72)",
             backdropFilter: "blur(28px)",
             WebkitBackdropFilter: "blur(28px)",
-            boxShadow: "0 20px 60px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.05)",
+            boxShadow: "0 1px 0 rgba(124,92,255,.22), 0 8px 40px rgba(0,0,0,.40)",
             overflow: "hidden",
             display: "flex", alignItems: "center",
           }}>
@@ -236,7 +203,7 @@ export default function Navbar() {
             {/* ── Content row ── */}
             <div style={{
               display: "flex", alignItems: "center", justifyContent: "space-between",
-              width: "100%", padding: "0 28px", gap: "20px",
+              width: "100%", maxWidth: 1200, margin: "0 auto", padding: "0 32px", gap: "20px",
             }}>
 
               {/* Brand */}
@@ -313,12 +280,11 @@ export default function Navbar() {
               </div>
             </div>
           </nav>
-        </motion.div>
-      </div>
+      </motion.div>
 
-      {/* ─── Mobile dropdown centering wrapper ─── */}
+      {/* ─── Mobile dropdown ─── */}
       <div style={{
-        position: "fixed", top: "88px", left: 0, right: 0,
+        position: "fixed", top: "72px", left: 0, right: 0,
         zIndex: 999, display: "flex", justifyContent: "center",
         pointerEvents: "none",
       }}>
